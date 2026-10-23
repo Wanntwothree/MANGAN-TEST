@@ -1,0 +1,291 @@
+/* Register page: loads after style.css and frontPage.css */
+
+/*Card*/
+.register-card{
+    grid-template-columns: 1fr;
+    max-width: 520px;
+}
+
+.register-card .front-text h1{
+    font-size: 2.6rem;
+    margin-bottom: 12px;
+    color: var(--brown-dark);
+}
+
+.register-card .front-text p{
+    margin-bottom: 8px;
+}
+
+/* Form */
+#registerForm label{
+    display: block;
+    margin: 16px 0 6px;
+    font-size: 1.15rem;
+    color: var(--brown-dark);
+}
+
+#registerForm input{
+    width: 100%;
+    padding: 12px 14px;
+    font-family: "Poppins", sans-serif;
+    font-size: .95rem;
+    color: var(--brown-dark);
+    background: var(--white);
+    border: 2px solid var(--brown);
+    border-radius: 14px;
+}
+
+#registerForm input::placeholder{
+    color: var(--brown-light);
+}
+
+#registerForm input:focus-visible,
+#registerForm .btn:focus-visible,
+.eye:focus-visible,
+.register-card a:focus-visible{
+    outline: 2px solid var(--accent);
+}
+
+/*registerContainer*/
+.registerContainer{
+    background: var(--white);
+    padding: 28px;
+    border-radius: 18px;
+    border: 1px solid rgba(107,74,58,.18);
+    box-shadow: 0 2px 8px rgba(59,42,34,.08);
+}
+
+#registerForm label:first-child{ margin-top: 0; }
+
+#registerForm .msg{
+    min-height: 0;
+    margin: 8px 0 0;
+}
+
+#registerForm .btn{ margin-top: 12px; }
+
+.register-card .front-text h1{ text-align: center; }
+/* Eye icon */
+.box{
+    position: relative;
+}
+
+.box input{
+    padding-right: 50px;
+}
+
+.eye{
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    background: none;
+    border: 0;
+    border-radius: 8px;
+    color: var(--brown);
+    cursor: pointer;
+}
+
+.eye svg{
+    width: 22px;
+    height: 22px;
+}
+
+.eye .off{ display: none; }
+.eye.on .open{ display: none; }
+.eye.on .off{ display: block; }
+
+/*rules*/
+.rules{
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 0;
+    font-size: .85rem;
+    color: var(--brown);
+}
+
+.rules li{
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 2px;
+}
+
+.rules li::before{
+    content: "○";
+    position: absolute;
+    left: 0;
+}
+
+.rules li.ok{ color: #2e7d32; }
+.rules li.ok::before{ content: "✓"; }
+
+/* Message (red for errors, green for success) */
+.msg{
+    min-height: 1.4em;
+    margin-top: 14px;
+    color: #b3261e;
+}
+
+.msg.ok{
+    color: #2e7d32;
+}
+
+/*Button*/
+#registerForm .btn{
+    margin-top: 10px;
+}
+
+/* "Already have an account?" line */
+.register-card .switch{
+    margin-top: 18px;
+    margin-bottom: 0;
+}
+
+.register-card .switch a{
+    font-family: inherit;
+    font-weight: 500;
+    text-decoration: underline;
+    color: var(--brown);
+}
+
+@media (max-width: 700px){
+    .register-card .front-text h1{ font-size: 2.2rem; }
+}
+
+/* Login page */
+
+/* Card */
+.login-card{
+    grid-template-columns: 1fr;
+    max-width: 520px;
+}
+
+.login-card .front-text h1{
+    font-size: 2.6rem;
+    margin-bottom: 12px;
+    color: var(--brown-dark);
+    text-align: center;
+}
+
+.login-card .front-text p{
+    margin-bottom: 8px;
+}
+
+/* Form */
+#loginForm label{
+    display: block;
+    margin: 16px 0 6px;
+    font-size: 1.15rem;
+    color: var(--brown-dark);
+}
+
+#loginForm input{
+    width: 100%;
+    padding: 12px 14px;
+    font-family: "Poppins", sans-serif;
+    font-size: .95rem;
+    color: var(--brown-dark);
+    background: var(--white);
+    border: 2px solid var(--brown);
+    border-radius: 14px;
+}
+
+#loginForm input::placeholder{
+    color: var(--brown-light);
+}
+
+#loginForm input:focus-visible,
+#loginForm .btn:focus-visible,
+.eye:focus-visible,
+.login-card a:focus-visible{
+    outline: 2px solid var(--accent);
+}
+
+.loginContainer{
+    background: var(--white);
+    padding: 28px;
+    border-radius: 18px;
+    border: 1px solid rgba(107,74,58,.18);
+    box-shadow: 0 2px 8px rgba(59,42,34,.08);
+}
+
+#loginForm label:first-child{
+    margin-top: 0;
+}
+
+/* Eye icon */
+.box{
+    position: relative;
+}
+
+.box input{
+    padding-right: 50px;
+}
+
+.eye{
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    background: none;
+    border: 0;
+    border-radius: 8px;
+    color: var(--brown);
+    cursor: pointer;
+}
+
+.eye svg{
+    width: 22px;
+    height: 22px;
+}
+
+.eye .off{ display: none; }
+.eye.on .open{ display: none; }
+.eye.on .off{ display: block; }
+
+/* Message (red for errors, green for success) */
+.msg{
+    min-height: 1.4em;
+    margin-top: 14px;
+    color: #b3261e;
+}
+
+#loginForm .msg{
+    min-height: 0;
+    margin: 8px 0 0;
+}
+
+.msg.ok{
+    color: #2e7d32;
+}
+
+/* Button */
+#loginForm .btn{
+    margin-top: 12px;
+}
+
+/* "Don't have an account?" line */
+.login-card .switch{
+    margin-top: 18px;
+    margin-bottom: 0;
+}
+
+.login-card .switch a{
+    font-family: inherit;
+    font-weight: 500;
+    text-decoration: underline;
+    color: var(--brown);
+}
+
+@media (max-width: 700px){
+    .login-card .front-text h1{ font-size: 2.2rem; }
+    .loginContainer{ padding: 20px; }
+}
