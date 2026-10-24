@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MANGAN | Forgot password</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/frontPage.css">
+  <link rel="stylesheet" href="../css/login-register.css">
+</head>
+<body>
+
+  <header id="navbar">
+    <div class="nav-inner">
+      <a href="frontPage.html" id="textLogo">MANGAN</a>
+    </div>
+  </header>
+
+  <main class="front-container login-card">
+    <div class="front-text">
+      <h1>Forgot password</h1>
+      <p id="forgotInfo">Enter your email and we'll send you a 6-digit code to reset your password.</p>
+
+      <form id="forgotForm">
+        <div class="loginContainer">
+          <label for="fEmail">Email</label>
+          <input type="email" id="fEmail" placeholder="Enter your email" autocomplete="email" required>
+
+          <p class="msg" role="status" aria-live="polite"></p>
+          <button type="submit" class="btn">Send code</button>
+        </div>
+      </form>
+
+      <p class="switch">Remembered it? <a href="login.html">Log in</a></p>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="../js/email-config.js"></script>
+  <script src="../js/login-register.js"></script>
+  <script src="../js/verify-core.js"></script>
+  <script src="../js/forgot.js"></script>
+</body>
+</html>

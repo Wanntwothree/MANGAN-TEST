@@ -34,3 +34,40 @@ document.querySelectorAll(".carousel").forEach(carousel => {
   dots[0].classList.add("active");
   restart();
 });
+
+document.getElementById("viewMoreBtn").addEventListener("click", function (e) {
+  e.preventDefault();
+  const user = localStorage.getItem("demoCurrentUser");
+  window.location.href = user ? "moodSelect.html" : "login.html";
+});
+
+(function () {
+  const email = localStorage.getItem("demoCurrentUser");
+  if (!email) return;
+
+  let name = email;
+  try { name = JSON.parse(localStorage.getItem("demoUsers"))[email].name || email; } catch (e) {}
+
+  const nav = document.querySelector(".nav-links");
+  nav.innerHTML = "";
+
+  const li1 = document.createElement("li");
+  const hello = document.createElement("span");
+  hello.className = "nav-user";
+  hello.textContent = "Hi, " + name;
+  li1.appendChild(hello);
+
+  const li2 = document.createElement("li");
+  const out = document.createElement("a");
+  out.href = "#";
+  out.className = "btn-register active";
+  out.textContent = "Log out";
+  out.addEventListener("click", function (e) {
+    e.preventDefault();
+    localStorage.removeItem("demoCurrentUser");
+    window.location.href = "frontPage.html";
+  });
+  li2.appendChild(out);
+
+  nav.append(li1, li2);
+})();

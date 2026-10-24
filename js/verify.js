@@ -75,6 +75,10 @@
       setMsg('Account created. Welcome, ' + pending.name + '!', true);
       Verify.clear();
       setTimeout(function () { window.location.href = 'login.html'; }, 1000);
+    } else if (pending.purpose === 'reset') {
+      sessionStorage.setItem('resetEmail', pending.email);
+      Verify.clear();
+      window.location.href = 'reset.html';
     } else {
       if (!users[pending.email]) { verifyBtn.disabled = false; return setMsg('Account not found.'); }
       try { localStorage.setItem('demoCurrentUser', pending.email); } catch (err) {}
@@ -82,7 +86,7 @@
       const email = pending.email;
       Verify.clear();
       setTimeout(function () {
-        window.location.href = email === ADMIN_EMAIL ? 'admin.html' : 'moodSelect.html';
+        window.location.href = email === ADMIN_EMAIL ? 'admin.html' : 'frontPage.html';
       }, 800);
     }
   });

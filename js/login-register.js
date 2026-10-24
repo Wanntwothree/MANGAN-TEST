@@ -152,7 +152,7 @@ if (loginForm) {
     setMsg("Welcome back, " + user.name + "!", true);
 
     setTimeout(function () {
-      window.location.href = email === ADMIN_EMAIL ? "admin.html" : "moodSelect.html";
+      window.location.href = email === ADMIN_EMAIL ? "admin.html" : "frontPage.html";
     }, 800);
   });
 }
