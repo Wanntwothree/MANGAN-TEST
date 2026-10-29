@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reset your password · MANGAN</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+  <link rel="stylesheet" href="/css/auth.css?v=2">
+  <script src="/auth.js?v=1" defer></script>
+</head>
+<body class="auth-page" data-auth-page="forgot">
+  <header class="auth-header"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 15.5h22c-.5 7-4.8 11-11 11s-10.5-4-11-11Z"/><path d="M9 11.5c1-2 2-2 3 0s2 2 3 0 2-2 3 0 2 2 3 0 2-2 3 0M8 7.5c1-2 2-2 3 0m10 0c1-2 2-2 3 0"/></svg></span><span class="brand-word">mangan<span>.</span></span></a><a href="login.html">← Back to sign in</a></header>
+  <main class="auth-layout">
+    <section class="auth-story">
+      <div class="auth-story-copy"><p class="eyebrow"><span class="eyebrow-line"></span> NO WORRIES</p><h1>We’ll help you get <span>back to the table.</span></h1><p>Reset your password and your favorite local spots will be waiting where you left them.</p></div>
+      <div class="auth-story-foot"><span>Your account stays yours.</span><img class="auth-story-photo" src="images/ciudad-dining.svg" alt=""></div>
+    </section>
+    <section class="auth-form-panel"><div class="auth-form-wrap">
+      <p class="eyebrow"><span class="eyebrow-line"></span> ACCOUNT RECOVERY</p><h2>Forgot password?</h2><p class="auth-description">Enter the email tied to your account. The local beta will show a reset code here.</p>
+      <form class="auth-form" id="forgot-form">
+        <label for="forgot-email">Email address</label><input id="forgot-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+        <p class="auth-message" id="auth-message" aria-live="polite"></p>
+        <button class="auth-submit" type="submit">Get a reset code <span>↗</span></button>
+      </form>
+      <div class="reset-code-callout" id="reset-code-callout" hidden>Local beta code — keep it private and use it on the next page.<strong></strong><a href="/reset.html">Continue to reset password ↗</a></div>
+      <p class="auth-switch">Remembered your password? <a href="login.html">Sign in</a></p>
+      <p class="auth-hint">Production password recovery requires a configured email provider; this local beta does not send email.</p>
+    </div></section>
+  </main>
+</body>
+</html>

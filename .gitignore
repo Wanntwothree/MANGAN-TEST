@@ -1,0 +1,12 @@
+# Local runtime database (contains account data)
+data/*.sqlite
+data/*.sqlite-shm
+data/*.sqlite-wal
+
+# Dependencies and local environment
+node_modules/
+.env
+
+# OS and editor files
+.DS_Store
+Thumbs.db

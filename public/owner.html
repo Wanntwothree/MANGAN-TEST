@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Restaurant owner · MANGAN</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+  <link rel="stylesheet" href="/css/dashboard.css?v=4">
+  <script src="/owner.js?v=3" defer></script>
+</head>
+<body class="dashboard-page">
+  <header class="dashboard-header">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 15.5h22c-.5 7-4.8 11-11 11s-10.5-4-11-11Z"/><path d="M9 11.5c1-2 2-2 3 0s2 2 3 0 2-2 3 0 2 2 3 0 2-2 3 0M8 7.5c1-2 2-2 3 0m10 0c1-2 2-2 3 0"/></svg></span><span class="brand-word">mangan<span>.</span></span></a>
+    <nav class="dashboard-nav"><a href="/">Explore MANGAN ↗</a><button id="logout-button" type="button">Log out</button></nav>
+  </header>
+  <main class="dashboard-main">
+    <section class="dashboard-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> RESTAURANT OWNER</p><h1>Your places, your story.</h1></div><p>Add your eatery to the local guide. New and edited listings are reviewed by an admin before they appear publicly.</p></section>
+    <p class="dashboard-notice">Use the included photo gallery, share accurate venue details, and add prices in Philippine pesos. New listings stay pending until reviewed.</p>
+    <section class="stat-grid" aria-label="Restaurant listing summary">
+      <article class="stat-card"><span>Your listings</span><strong id="stat-total">0</strong></article>
+      <article class="stat-card"><span>Live on MANGAN</span><strong id="stat-approved">0</strong></article>
+      <article class="stat-card"><span>Waiting for review</span><strong id="stat-pending">0</strong></article>
+      <article class="stat-card"><span>Needs attention</span><strong id="stat-rejected">0</strong></article>
+    </section>
+    <section class="dashboard-card" aria-labelledby="owner-form-title">
+      <header class="dashboard-card-heading"><div><h2 id="owner-form-title">Add your restaurant</h2><p>Tell local food lovers what makes your spot worth finding.</p></div></header>
+      <div class="dashboard-content">
+        <form class="owner-form" id="restaurant-form">
+          <input type="hidden" name="restaurantId">
+          <label>Restaurant name<input name="name" minlength="3" maxlength="100" required placeholder="Your restaurant name"></label>
+          <label>Neighborhood or area<input name="neighborhood" minlength="2" maxlength="100" required placeholder="Dagupan City"></label>
+          <label class="span-two">Full address<input name="address" minlength="5" maxlength="240" required placeholder="Street, barangay, city"></label>
+          <label>Map latitude (optional)<input name="latitude" type="number" min="-90" max="90" step="any" placeholder="e.g. 16.043"></label>
+          <label>Map longitude (optional)<input name="longitude" type="number" min="-180" max="180" step="any" placeholder="e.g. 120.334"></label>
+          <div class="span-two location-actions"><button class="dashboard-secondary" id="geocode-address" type="button">Find coordinates from address</button><span class="auth-hint">Uses the server-configured Google Maps geocoding service.</span></div>
+          <label class="span-two">Short description<textarea name="description" minlength="15" maxlength="500" required placeholder="What should guests know before they visit?"></textarea></label>
+          <label>Estimated minimum price (₱)<input name="priceMin" type="number" min="1" max="100000" step="1" required placeholder="200"></label>
+          <label>Estimated maximum price (₱)<input name="priceMax" type="number" min="1" max="100000" step="1" required placeholder="600"></label>
+          <label>Opening hours<input name="hours" maxlength="100" required placeholder="Daily · 10:00 AM – 9:00 PM"></label>
+          <label>Food image<select name="imageUrl" required><option value="/images/bangus-table.svg">Bangus table illustration</option><option value="/images/ciudad-dining.svg">Restaurant dining illustration</option><option value="/images/seafood-spread.svg">Seafood spread illustration</option></select></label>
+          <label>Venue image<select name="venueImageUrl" required><option value="/images/ciudad-dining.svg">Restaurant dining illustration</option><option value="/images/bangus-table.svg">Bangus table illustration</option><option value="/images/seafood-spread.svg">Seafood spread illustration</option></select></label>
+          <div class="span-two"><span class="auth-form-label">Food categories</span><div class="category-checks"><label><input name="categories" type="checkbox" value="meat"> Meat</label><label><input name="categories" type="checkbox" value="seafood"> Seafood</label><label><input name="categories" type="checkbox" value="drinks"> Drinks</label><label><input name="categories" type="checkbox" value="dessert"> Dessert</label></div></div>
+          <label class="span-two">Highlights <span class="auth-hint">Separate up to five short highlights with commas.</span><input name="highlights" maxlength="300" placeholder="Fresh seafood, family meals, local favorites"></label>
+          <div class="owner-form-actions"><button class="dashboard-primary" type="submit" id="restaurant-submit">Submit for review <span>↗</span></button><button class="dashboard-secondary" id="restaurant-cancel" type="button" hidden>Cancel edit</button></div>
+        </form>
+        <p class="dashboard-message" id="owner-message" aria-live="polite"></p>
+      </div>
+    </section>
+    <section class="dashboard-card">
+      <header class="dashboard-card-heading"><div><h2>Your restaurant listings</h2><p>Edit a listing to submit an updated version for review.</p></div></header>
+      <div class="table-scroll" id="owner-list"></div>
+    </section>
+  </main>
+</body>
+</html>

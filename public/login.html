@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in · MANGAN</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/auth.css">
+  <script src="/auth.js" defer></script>
+</head>
+<body class="auth-page" data-auth-page="login">
+  <header class="auth-header"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 15.5h22c-.5 7-4.8 11-11 11s-10.5-4-11-11Z"/><path d="M9 11.5c1-2 2-2 3 0s2 2 3 0 2-2 3 0 2 2 3 0 2-2 3 0M8 7.5c1-2 2-2 3 0m10 0c1-2 2-2 3 0"/></svg></span><span class="brand-word">mangan<span>.</span></span></a><a href="index.html">← Back to discovering</a></header>
+  <main class="auth-layout">
+    <section class="auth-story">
+      <div class="auth-story-copy"><p class="eyebrow"><span class="eyebrow-line"></span> A TABLE IS WAITING</p><h1>Your next favorite is closer <span>than you think.</span></h1><p>Sign in to keep your favorite Dagupan spots close, or just come back to explore.</p></div>
+      <div class="auth-story-foot"><span>Good food. Great mood. Always local.</span><img class="auth-story-photo" src="images/bangus-table.svg" alt=""></div>
+    </section>
+    <section class="auth-form-panel"><div class="auth-form-wrap">
+      <p class="eyebrow"><span class="eyebrow-line"></span> WELCOME BACK</p><h2>Sign in</h2><p class="auth-description">Your next good meal is one quick sign-in away.</p>
+      <form class="auth-form" id="login-form">
+        <label for="login-email">Email address</label><input id="login-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+        <label for="login-password">Password</label>
+        <div class="password-field"><input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Your password" required><button class="password-toggle" type="button" data-password-toggle="login-password" aria-controls="login-password" aria-pressed="false">Show</button></div>
+        <a class="auth-help-link" href="forgot.html">Forgot password?</a>
+        <p class="auth-message" id="auth-message" aria-live="polite"></p>
+        <button class="auth-submit" type="submit">Sign in <span>↗</span></button>
+      </form>
+      <p class="auth-switch">New to MANGAN? <a href="register.html">Create an account</a></p>
+    </div></section>
+  </main>
+</body>
+</html>

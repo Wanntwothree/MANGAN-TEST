@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Choose a new password · MANGAN</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+  <link rel="stylesheet" href="/css/auth.css?v=2">
+  <script src="/auth.js?v=1" defer></script>
+</head>
+<body class="auth-page" data-auth-page="reset">
+  <header class="auth-header"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 15.5h22c-.5 7-4.8 11-11 11s-10.5-4-11-11Z"/><path d="M9 11.5c1-2 2-2 3 0s2 2 3 0 2-2 3 0 2 2 3 0 2-2 3 0M8 7.5c1-2 2-2 3 0m10 0c1-2 2-2 3 0"/></svg></span><span class="brand-word">mangan<span>.</span></span></a><a href="/login.html">← Back to sign in</a></header>
+  <main class="auth-layout">
+    <section class="auth-story">
+      <div class="auth-story-copy"><p class="eyebrow"><span class="eyebrow-line"></span> ONE MORE STEP</p><h1>Fresh start.<br><span>New password.</span></h1><p>Choose a new password you haven’t used with MANGAN before.</p></div>
+      <div class="auth-story-foot"><span>Almost back to discovering.</span><img class="auth-story-photo" src="/images/bangus-table.svg" alt=""></div>
+    </section>
+    <section class="auth-form-panel"><div class="auth-form-wrap">
+      <p class="eyebrow"><span class="eyebrow-line"></span> SET A NEW PASSWORD</p><h2>Make it a strong one.</h2><p class="auth-description">Enter your email and the 6-digit local beta code.</p>
+      <form class="auth-form" id="reset-form">
+        <label for="reset-email">Email address</label><input id="reset-email" name="email" type="email" autocomplete="email" required>
+        <label for="reset-code">Reset code</label><input id="reset-code" name="code" type="text" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" placeholder="000000" required>
+        <label for="reset-password">New password</label><input id="reset-password" name="password" type="password" autocomplete="new-password" minlength="8" maxlength="128" required>
+        <label for="reset-confirm">Confirm new password</label><input id="reset-confirm" name="confirmPassword" type="password" autocomplete="new-password" required>
+        <p class="auth-hint">Use uppercase, lowercase, a number, a symbol, and at least 8 characters.</p>
+        <p class="auth-message" id="auth-message" aria-live="polite"></p>
+        <button class="auth-submit" type="submit">Update password <span>↗</span></button>
+      </form>
+    </div></section>
+  </main>
+</body>
+</html>

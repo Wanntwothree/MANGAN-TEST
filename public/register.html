@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create an account · MANGAN</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+  <link rel="stylesheet" href="/css/auth.css?v=2">
+  <script src="/auth.js?v=2" defer></script>
+</head>
+<body class="auth-page" data-auth-page="register">
+  <header class="auth-header"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 15.5h22c-.5 7-4.8 11-11 11s-10.5-4-11-11Z"/><path d="M9 11.5c1-2 2-2 3 0s2 2 3 0 2-2 3 0 2 2 3 0 2-2 3 0M8 7.5c1-2 2-2 3 0m10 0c1-2 2-2 3 0"/></svg></span><span class="brand-word">mangan<span>.</span></span></a><a href="/">← Back to discovering</a></header>
+  <main class="auth-layout">
+    <section class="auth-story">
+      <div class="auth-story-copy"><p class="eyebrow"><span class="eyebrow-line"></span> A SEAT FOR EVERYONE</p><h1>Come hungry.<br><span>Leave inspired.</span></h1><p>Join a local food community. Discover new favorites or bring your own restaurant to the table.</p></div>
+      <div class="auth-story-foot"><span>For food lovers and restaurant owners.</span><img class="auth-story-photo" src="images/seafood-spread.svg" alt=""></div>
+    </section>
+    <section class="auth-form-panel"><div class="auth-form-wrap">
+      <p class="eyebrow"><span class="eyebrow-line"></span> GET STARTED</p><h2>Create your account</h2><p class="auth-description">A few details, then we’ll get you to the good stuff.</p>
+      <form class="auth-form" id="register-form">
+        <label for="register-name">Your name</label><input id="register-name" name="name" type="text" autocomplete="name" maxlength="100" placeholder="How should we call you?" required>
+        <label for="register-email">Email address</label><input id="register-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="you@example.com" required>
+        <label for="register-role">I’m here as a</label><select id="register-role" name="role" required><option value="user">Food lover — I’m looking for places to eat</option><option value="owner">Restaurant owner — I want to list my place</option></select>
+        <label for="register-password">Password</label>
+        <div class="password-field"><input id="register-password" name="password" type="password" autocomplete="new-password" minlength="8" maxlength="128" placeholder="Create a strong password" required><button class="password-toggle" type="button" data-password-toggle="register-password" aria-controls="register-password" aria-pressed="false">Show</button></div>
+        <ul class="password-requirements" id="password-requirements" aria-label="Password requirements">
+          <li data-password-rule="length"><span aria-hidden="true">○</span> 8 to 128 characters</li>
+          <li data-password-rule="uppercase"><span aria-hidden="true">○</span> An uppercase letter</li>
+          <li data-password-rule="lowercase"><span aria-hidden="true">○</span> A lowercase letter</li>
+          <li data-password-rule="number"><span aria-hidden="true">○</span> A number</li>
+          <li data-password-rule="symbol"><span aria-hidden="true">○</span> A symbol</li>
+        </ul>
+        <label for="register-confirm">Confirm password</label>
+        <div class="password-field"><input id="register-confirm" name="confirmPassword" type="password" autocomplete="new-password" required><button class="password-toggle" type="button" data-password-toggle="register-confirm" aria-controls="register-confirm" aria-pressed="false">Show</button></div>
+        <p class="auth-message" id="auth-message" aria-live="polite"></p>
+        <button class="auth-submit" type="submit">Create account <span>↗</span></button>
+      </form>
+      <p class="auth-switch">Already have an account? <a href="login.html">Sign in</a></p>
+    </div></section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>System monitoring · MANGAN</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+  <link rel="stylesheet" href="/css/dashboard.css?v=4">
+  <script src="/admin.js?v=2" defer></script>
+</head>
+<body class="dashboard-page">
+  <header class="dashboard-header">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 15.5h22c-.5 7-4.8 11-11 11s-10.5-4-11-11Z"/><path d="M9 11.5c1-2 2-2 3 0s2 2 3 0 2-2 3 0 2 2 3 0 2-2 3 0M8 7.5c1-2 2-2 3 0m10 0c1-2 2-2 3 0"/></svg></span><span class="brand-word">mangan<span>.</span></span></a>
+    <nav class="dashboard-nav"><a href="/">Public site ↗</a><button id="logout-button" type="button">Log out</button></nav>
+  </header>
+  <main class="dashboard-main">
+    <section class="dashboard-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> ADMIN CONTROL ROOM</p><h1>Keep the table in good shape.</h1></div><p>Monitor beta activity, review owner submissions, and keep community listings clear and useful.</p></section>
+    <p class="dashboard-notice">Admin accounts are created only from server environment settings. Review venue details before approving public listings; current ratings and venue seed data are examples for beta presentation.</p>
+    <section class="stat-grid" aria-label="System overview">
+      <article class="stat-card"><span>Food lovers</span><strong id="stat-users">—</strong></article>
+      <article class="stat-card"><span>Restaurant owners</span><strong id="stat-owners">—</strong></article>
+      <article class="stat-card"><span>Restaurant listings</span><strong id="stat-restaurants">—</strong></article>
+      <article class="stat-card"><span>Waiting for review</span><strong id="stat-pending">—</strong></article>
+    </section>
+    <p class="dashboard-message" id="admin-message" aria-live="polite"></p>
+    <section class="dashboard-card">
+      <header class="dashboard-card-heading"><div><h2>Restaurant review queue</h2><p>Approve accurate owner submissions or reject listings that need changes.</p></div></header>
+      <div class="table-scroll" id="admin-restaurants"></div>
+    </section>
+    <section class="dashboard-card">
+      <header class="dashboard-card-heading"><div><h2>Account monitoring</h2><p>Pause and restore customer or owner accounts during the beta.</p></div></header>
+      <div class="table-scroll" id="admin-users"></div>
+    </section>
+    <section class="dashboard-card">
+      <header class="dashboard-card-heading"><div><h2>Tester feedback</h2><p id="feedback-count">Recent notes from the beta.</p></div></header>
+      <div class="dashboard-content"><div class="feedback-list" id="admin-feedback"></div></div>
+    </section>
+  </main>
+</body>
+</html>

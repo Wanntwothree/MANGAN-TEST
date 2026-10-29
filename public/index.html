@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f4ed">
+  <meta name="description" content="Find your next favorite meal in Dagupan. Explore local restaurants by the mood you're in.">
+  <title>MANGAN — Find your kind of delicious</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css?v=4">
+  <script src="/app.js?v=8" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="MANGAN home">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 15.5h22c-.5 7-4.8 11-11 11s-10.5-4-11-11Z"/><path d="M9 11.5c1-2 2-2 3 0s2 2 3 0 2-2 3 0 2 2 3 0 2-2 3 0M8 7.5c1-2 2-2 3 0m10 0c1-2 2-2 3 0"/></svg></span>
+      <span class="brand-word">mangan<span>.</span></span>
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a class="nav-link is-current" href="#discover">Discover</a>
+      <a class="nav-link" href="#how-it-works">How it works</a>
+    </nav>
+
+    <div class="header-actions">
+      <span class="location-pill"><span class="location-dot"></span> Dagupan, PH</span>
+      <button class="saved-nav" id="saved-toggle" type="button" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 8.7c0 5.1-8.8 10-8.8 10s-8.8-4.9-8.8-10A4.6 4.6 0 0 1 12 6.3a4.6 4.6 0 0 1 8.8 2.4Z"/></svg>
+        <span>Saved</span><span class="saved-count" id="saved-count">0</span>
+      </button>
+      <a class="account-link" id="account-link" href="/login.html">Sign in</a>
+      <button class="header-logout" id="logout-button" type="button" hidden>Log out</button>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> YOUR DAGUPAN FOOD GUIDE</p>
+        <h1 id="hero-title">Good food.<br><span>Great mood.</span></h1>
+        <p class="hero-description">From a quick bite to your next big get-together, find a local spot worth sitting down for.</p>
+        <a class="hero-cta" href="#discover">Find your next favorite <span aria-hidden="true">↘</span></a>
+        <div class="hero-note"><span class="note-sparkle">✳</span> Made for hungry people in Dagupan</div>
+      </div>
+      <div class="hero-visual" aria-label="A table set for a delicious meal">
+        <div class="hero-image"></div>
+        <div class="hero-photo-wash"></div>
+        <div class="hero-stamp"><span>LOCAL<br>LOVES</span><span class="stamp-star">✳</span></div>
+        <div class="hero-caption"><span class="caption-dot"></span><span>Good things are<br>on the menu.</span><span class="caption-arrow">↗</span></div>
+        <div class="hero-photo-label">A little taste of Dagupan</div>
+      </div>
+      <div class="hero-index" aria-hidden="true">01 — 03</div>
+    </section>
+
+    <section class="discovery-section" id="discover" aria-labelledby="discover-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-line"></span> THE GOOD STUFF</p>
+          <h2 id="discover-title">What sounds good?</h2>
+          <p class="section-subtitle">Pick a craving or search for your next favorite spot.</p>
+        </div>
+        <span class="results-summary" id="results-summary" aria-live="polite">Finding your spots…</span>
+      </div>
+
+      <div class="discovery-controls">
+        <div class="category-list" role="group" aria-label="Filter restaurants by food">
+          <button class="category-chip is-active" type="button" data-category="all" aria-pressed="true"><span>✳</span> All spots</button>
+          <button class="category-chip" type="button" data-category="meat" aria-pressed="false"><span>♨</span> Meat</button>
+          <button class="category-chip" type="button" data-category="seafood" aria-pressed="false"><span>≈</span> Seafood</button>
+          <button class="category-chip" type="button" data-category="drinks" aria-pressed="false"><span>◒</span> Drinks</button>
+          <button class="category-chip" type="button" data-category="dessert" aria-pressed="false"><span>✿</span> Dessert</button>
+        </div>
+        <div class="search-sort">
+          <label class="search-box">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.2 4.2"/></svg>
+            <span class="visually-hidden">Search restaurants</span>
+            <input id="search-input" type="search" placeholder="Search a place, dish..." autocomplete="off">
+            <kbd>/</kbd>
+          </label>
+          <label class="sort-label">Sort
+            <select id="sort-select" aria-label="Sort restaurants">
+              <option value="recommended">Recommended</option>
+              <option value="rating">Top rated</option>
+              <option value="name">Name A–Z</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="restaurant-grid" id="restaurant-grid" aria-live="polite" aria-busy="true"></div>
+      <div class="empty-state" id="empty-state" hidden>
+        <span class="empty-icon">🥢</span>
+        <h3 id="empty-title">No spots just yet</h3>
+        <p id="empty-description">Try a different search or food mood.</p>
+        <button class="text-button" id="clear-filters" type="button">Clear filters <span>↗</span></button>
+      </div>
+      <div class="load-error" id="load-error" hidden role="alert">
+        <p>We couldn't load your food spots just now.</p>
+        <button class="text-button" id="retry-load" type="button">Try again <span>↗</span></button>
+      </div>
+    </section>
+
+    <section class="how-section" id="how-it-works">
+      <div class="how-intro">
+        <p class="eyebrow"><span class="eyebrow-line"></span> EASY AS MANGAN</p>
+        <h2>Less scrolling.<br><span>More savoring.</span></h2>
+        <p>Good meals start with a good idea. We make finding one feel easy.</p>
+      </div>
+      <div class="steps">
+        <article class="step-card"><span class="step-number">01</span><span class="step-icon">⌕</span><h3>Find your craving</h3><p>Search for a favorite spot, dish, or kind of food.</p></article>
+        <article class="step-card"><span class="step-number">02</span><span class="step-icon">↗</span><h3>Pick your place</h3><p>Compare local picks, useful details, and what sounds good.</p></article>
+        <article class="step-card"><span class="step-number">03</span><span class="step-icon">♡</span><h3>Keep the good ones</h3><p>Save a spot for later and build your next food plan.</p></article>
+      </div>
+    </section>
+
+    <section class="closing-banner">
+      <div><p class="eyebrow">DAGUPAN IS SERVED</p><h2>Ready when you are.</h2></div>
+      <a href="#discover" class="banner-link">Browse local favorites <span>↗</span></a>
+      <span class="banner-decoration" aria-hidden="true">✳</span>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="/" aria-label="MANGAN home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 15.5h22c-.5 7-4.8 11-11 11s-10.5-4-11-11Z"/><path d="M9 11.5c1-2 2-2 3 0s2 2 3 0 2-2 3 0 2 2 3 0 2-2 3 0M8 7.5c1-2 2-2 3 0m10 0c1-2 2-2 3 0"/></svg></span><span class="brand-word">mangan<span>.</span></span></a>
+    <p>Good food is better when it’s shared.</p>
+    <button class="feedback-link" id="feedback-open" type="button">Help us make beta better <span>↗</span></button>
+    <span class="footer-copyright">© 2026 MANGAN</span>
+  </footer>
+
+  <dialog class="detail-dialog" id="detail-dialog" aria-labelledby="detail-name">
+    <button class="dialog-close" type="button" data-close-dialog aria-label="Close restaurant details">×</button>
+    <div class="detail-body" id="detail-body"></div>
+  </dialog>
+
+  <dialog class="feedback-dialog" id="feedback-dialog" aria-labelledby="feedback-title">
+    <button class="dialog-close" type="button" data-close-feedback aria-label="Close feedback form">×</button>
+    <p class="eyebrow"><span class="eyebrow-line"></span> YOUR VOICE MATTERS</p>
+    <h2 id="feedback-title">Help us make it better.</h2>
+    <p class="feedback-intro">This beta is better with you. Tell us what worked, what didn’t, or what you’d love to see.</p>
+    <form id="feedback-form">
+      <label for="feedback-topic">What’s on your mind?</label>
+      <select id="feedback-topic" name="topic" required>
+        <option value="idea">I have an idea</option>
+        <option value="bug">I found a problem</option>
+        <option value="other">Something else</option>
+      </select>
+      <label for="feedback-message">Your feedback</label>
+      <textarea id="feedback-message" name="message" minlength="8" maxlength="1000" rows="5" placeholder="Tell us a little more (at least 8 characters)..." required></textarea>
+      <p class="form-message" id="feedback-message-status" aria-live="polite"></p>
+      <button class="primary-button" type="submit">Send feedback <span>↗</span></button>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
